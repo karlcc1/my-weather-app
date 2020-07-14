@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import './FetchWeather.css'
-// import './wind.png'
+import { TextField, Button } from '@material-ui/core'
 
 const appid = process.env.REACT_APP_API_KEY;
 
@@ -17,7 +17,6 @@ function DataFetching() {
     const [temp_min, setTemp_min] = useState()
     const [temp_max, setTemp_max] = useState()
     const [wind_speed, setWind_speed] = useState()
-    const [clouds, setClouds] = useState()
     const [user_input, setInput] = useState('Auckland')
     const [new_input, setNew_input] = useState('Auckland')
 
@@ -42,7 +41,7 @@ function DataFetching() {
             else {document.body.style.backgroundColor = "steelblue";}
         }
         else if (short_desc === "Clouds") {
-            if(weather_id === 801 || weather_id == 802){
+            if(weather_id === 801 || weather_id === 802){
                 document.body.style.backgroundColor = "gainsboro";
             }
             else {document.body.style.backgroundColor = "silver";}        
@@ -63,7 +62,6 @@ function DataFetching() {
                 setTemp_min(res.data.main.temp_min)
                 setTemp_max(res.data.main.temp_max)
                 setWind_speed(res.data.wind.speed)
-                setClouds(res.data.clouds.all)
             })
             .catch(err => {
                 console.error()
@@ -74,19 +72,25 @@ function DataFetching() {
 
     return (  
         <div>
-            <input type="text" 
-                value={user_input} 
-                onChange={e => setInput(e.target.value)} 
-                onKeyPress={e => handleKeyPress(e)}
-                />
-            <button type="button" onClick={handleClick}>Submit</button>
+            <div id="submit-component">
+                <TextField 
+                id="standard-basic" 
+                label="City" 
+                onChange={e => setInput(e.target.value)}
+                onKeyPress={e => handleKeyPress(e)}/>
+                <div id="button">
+                    <Button variant="contained" color="secondary" onClick={handleClick}>
+                        Submit
+                    </Button>
+                </div>
+            </div>
             <p>{city_name}, {country}</p>
-            <img id="icon" src={icon_path} />
-            <div class="container">
+            <img id="icon" src={icon_path} alt="weather_icon" />
+            <div className="container">
                 <p>{Math.round((temp - 273.15) * 10) / 10}&#176;C</p>
                 <p>{Math.round((temp_max - 273.15) * 1) / 1}&frasl;{Math.round((temp_min - 273.15) * 1) / 1}&#176;</p>
                     <div id="wind">
-                        <img id="wind-icon" src={require('./wind.png')} height="100px" />
+                        <img id="wind-icon" src={require('./wind.png')} height="100px" alt="wind_icon" />
                         <p>{wind_speed} <span id="wind-speed">m/s</span></p>
                     </div>
             </div>               
