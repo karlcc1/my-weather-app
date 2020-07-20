@@ -3,7 +3,7 @@ import axios from 'axios'
 import './FetchWeather.css'
 import { TextField, Button } from '@material-ui/core'
 
-const appid = process.env.REACT_APP_API_KEY;
+const appid = '5f238b939ac71cc2e6f3ae3d40156cdb'; //process.env.REACT_APP_API_KEY;
 
 function DataFetching() {
     const [city_name, setCity_name] = useState()
