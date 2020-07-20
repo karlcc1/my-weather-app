@@ -1,12 +1,11 @@
 import React from 'react';
 import './App.css';
-import DataFetching from './DataFetching';
+import FetchWeather from './FetchWeather';
 
 function App() {
-
   return (
     <div>
-      <DataFetching />
+      <FetchWeather />
     </div>
   );
 }
