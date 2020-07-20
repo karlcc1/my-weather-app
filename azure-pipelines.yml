@@ -22,11 +22,6 @@ steps:
     cd ..
   displayName: 'npm install and build'
 
-- task: Npm@1
-  inputs:
-    command: 'install'
-    workingDir: '@material-ui/core'
-
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: '$(buildDir)'
