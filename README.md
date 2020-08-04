@@ -1,5 +1,7 @@
 A simple weather web app created through the create-react-app for the MSA frontend project.
 
+View deployed project: http://msa-devops-2020-karl-frontend.azurewebsites.net/
+
 This app uses the '[Current Weather Data](https://openweathermap.org/current)' API from OpenWeather. Users can input a city name, as well as a country code if needed. It displays current basic weather metrics based on the city such as: current temp, min and max temp, wind speed, a short description, and an accompanying logo to go with it. The input components on the top left are from the [Material-UI](https://material-ui.com/) library. The background colour varies based on the current weather.
 
 ![Auckland](Auckland.PNG)
