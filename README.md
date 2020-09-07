@@ -1,4 +1,4 @@
-A simple weather web app created through the create-react-app for the MSA frontend project.
+A minimalistic weather web app created through the create-react-app for the MSA frontend project.
 
 View deployed project: http://msa-devops-2020-karl-frontend.azurewebsites.net/
 
