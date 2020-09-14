@@ -4,7 +4,7 @@ trigger:
 
 variables:
   rootDir: 'my-weather-app'
-  buildDir: '$(rootDir)/build'
+  buildDir: '/build'
 
 pool:
   vmImage: 'ubuntu-latest'
