@@ -1,3 +1,5 @@
+<strong>This is the old version. New version has been migrated to Vite as create-react-app is unsupported:</strong> https://github.com/karlcc1/vite-my-weather-app
+
 A minimalistic weather web app created through the create-react-app for the MSA frontend project.
 
 View deployed project: http://msa-devops-2020-karl-frontend.azurewebsites.net/
